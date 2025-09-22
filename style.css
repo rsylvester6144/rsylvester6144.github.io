@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    height: 100%;
+}
+@keyframes typing{
+    0%
+    {
+        width: 0;
+    }
+    100%
+    {
+        width: 13.8ch;
+    }
+}
+@keyframes blink
+{
+    0%
+    {
+        border-color: transparent;
+    }
+    50%
+    {
+        border-color: rgb(0, 213, 255);
+    }
+    100%
+    {
+        border-color: transparent;
+    }
+}
+.typing{
+    font: 'Anonymous Pro';
+    color: rgb(0, 213, 255);
+    font-size: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid rgb(0, 213, 255);
+    width: 0;
+    margin-top: 10px;
+    display: inline-flex;
+    animation: typing 1.3s steps(13) 1s 1 normal both, blink 1s infinite;
+}
+
+h2{
+    font: 'Anonymous Pro';
+    font-size: 36px;
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #00f, #0ff, #00f, #ff0);
+    background-size: 400% 400%;
+    animation: liquidBackground 15s linear infinite;
+    color: white;
+    text-align: center;
+    height: 100%; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+}
+
+.typewrite{
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+header {
+    background: linear-gradient(180deg, #333333, #555555);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+nav a span {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+}
+
+section h2, section h3, section h4, section h5 {
+    margin: 10px 0;
+}
+
+section#Home {
+    background: #111;
+}
+
+section#About {
+    background: #222;
+}
+
+section#Projects {
+    background: #333;
+}
+
+section#Contact {
+    background: #444;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
