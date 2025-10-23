@@ -74,6 +74,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     margin: 20px auto;
+    box-shadow: #0ff 0px 0px 10px, #00f 0px 0px 20px;
 }
 
 .typewrite{
@@ -83,23 +84,27 @@ main {
 }
 
 header {
-    background: linear-gradient(180deg, #333333, #555555);
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent black background */
+    color: white;                        /* text remains fully white */
     padding: 15px;
-
+    border-radius: 99999px;
+    position: fixed;
+    top: 35px;
+    left: 50%;                           /* center horizontally */
+    transform: translateX(-50%);         /* perfect centering */
+    display: flex;
+    justify-content: center;             /* center content inside header */
+    z-index: 1000;                        /* ensure header stays on top */
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 10px 20px 10px 20px;
 }
 
 footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -108,19 +113,42 @@ footer {
     color: white;
 }
 
+
 nav a {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    margin-right: 20px;
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    gap: 25px;
+    font-family: 'Anonymous Pro', monospace;
 }
 
 nav a span {
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 20px;
+    color: white !important;
+    font-weight: bold;
+    font-family: 'Anonymous Pro', monospace;
 }
+
+nav a span:hover {
+    color:#0ff !important;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+}
+
+nav a span:active{
+    color: #0ff !important;
+}
+
+nav a.active span {
+    color: #0ff !important;           
+}
+
 
 section {
     display: flex;
@@ -153,16 +181,14 @@ section#Contact {
 
 @media screen and (max-width: 768px) {
     header {
+        width: 90%;                       /* scale down on smaller screens */
         padding: 10px;
     }
 
     nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    section {
-        padding: 15px;
+        flex-wrap: wrap;                   /* wrap nav links if needed */
+        justify-content: center;
     }
 }
+
+

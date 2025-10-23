@@ -74,3 +74,34 @@ TxtType.prototype.tick = function() {
 window.onload = function() {
     // This is now delayed by 2 seconds, so it will not run immediately
 };
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.main-nav a');
+
+    function highlightCurrentSection() {
+        let currentSectionId = sections[0].id; // default to first section
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSectionId = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', highlightCurrentSection);
+    window.addEventListener('resize', highlightCurrentSection);
+
+    // Initial highlight on page load
+    highlightCurrentSection();
+});
+
